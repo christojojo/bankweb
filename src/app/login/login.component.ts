@@ -30,9 +30,30 @@ psw=''
 
 
 
-login(){
-  var acnum=this.acno
-  var psw=this.psw
+// login(){
+//   var acnum=this.acno
+//   var psw=this.psw
+//   let userDetailes=this.userDetailes
+//   if(acnum in  userDetailes){
+//     if(psw==userDetailes[acnum]['password']){
+//       alert("login sucess")
+//     }else{
+//       alert("incorrect password")
+//     }
+//     }else{
+//       alert("user not exist or inncorrect acno")
+//     }
+//   }
+
+login(a:any,b:any){
+console.log(a.value);
+console.log(b.value);
+
+
+
+  var acnum=a.value
+  var psw=b.value
+
   let userDetailes=this.userDetailes
   if(acnum in  userDetailes){
     if(psw==userDetailes[acnum]['password']){
@@ -46,15 +67,16 @@ login(){
   }
 
 
-acnochange(event:any){
-  this.acno=event.target.value
-  console.log(this.acno);
-  
-}
-pswchange(event:any){
-this.psw=event.target.value
-console.log(this.psw);
 
-}
+// acnochange(event:any){
+//   this.acno=event.target.value
+//   console.log(this.acno);
+  
+// }
+// pswchange(event:any){
+// this.psw=event.target.value
+// console.log(this.psw);
+
+// }
 
 }
