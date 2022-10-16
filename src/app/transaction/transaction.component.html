@@ -1,0 +1,30 @@
+<!-- table
+
+structural directive *ngFor  - can apply directly in html to acess data from array
+
+
+transaction History
+ -->
+
+
+ <div class="container w-50">
+    <h1 class="text-dark ms-50px">Transaction history</h1>
+    <table class="border border-dark w-50 text-dark" >
+        <thead>
+            <tr class="border border-dark">
+                <th class="border border-dark">Type</th>
+                <th class="border border-dark">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let i of transaction" class="border border-dark">
+                <th class="border border-dark">{{i.type}}</th>
+                <th class="border border-dark">{{i.amount}}</th>
+            </tr>
+          
+
+        </tbody>
+
+    </table>
+    <a routerLink="/dashboard">home</a>
+ </div>

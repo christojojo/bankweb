@@ -18,7 +18,14 @@ for calling a string
 
 
 2.two way binding
+2.1.1  ngModel  -  formsmodule   [(ngModel)]=""
 
+Redirection in ts
+-----------------
+
+method navigateByUrl---Router class method
+
+dependecy injection-data sharing b/t two classes
 
 
 

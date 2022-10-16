@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -23,16 +25,34 @@ psw=''
 
   }
 
-  constructor() { }
+  constructor(private router:Router,private ds:DataService) { }
 
   ngOnInit(): void {
   }
 
 
 
-// login(){
-//   var acnum=this.acno
-//   var psw=this.psw
+login(){
+  var acnum=this.acno
+  var psw=this.psw
+
+  const result=this.ds.login(acnum,psw)
+  if(result){
+    alert('login success')
+    this.router.navigateByUrl('dashboard')
+  }
+
+  }
+
+// login(a:any,b:any){
+// console.log(a.value);
+// console.log(b.value);
+
+
+
+//   var acnum=a.value
+//   var psw=b.value
+
 //   let userDetailes=this.userDetailes
 //   if(acnum in  userDetailes){
 //     if(psw==userDetailes[acnum]['password']){
@@ -44,27 +64,6 @@ psw=''
 //       alert("user not exist or inncorrect acno")
 //     }
 //   }
-
-login(a:any,b:any){
-console.log(a.value);
-console.log(b.value);
-
-
-
-  var acnum=a.value
-  var psw=b.value
-
-  let userDetailes=this.userDetailes
-  if(acnum in  userDetailes){
-    if(psw==userDetailes[acnum]['password']){
-      alert("login sucess")
-    }else{
-      alert("incorrect password")
-    }
-    }else{
-      alert("user not exist or inncorrect acno")
-    }
-  }
 
 
 
